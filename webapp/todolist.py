@@ -46,10 +46,10 @@ def create_task():
             "create-task.html", priority_list=[e.value for e in PriorityLevel]
         )
     else:
-        assert all(a in request.form for a in ("name", "priority"))
-        assert request.form["priority"] in [e.value for e in PriorityLevel]
+        assert all(a in request.form for a in ("name", "form select.field-priority"))
+        assert request.form["form select.field-priority"] in [e.value for e in PriorityLevel]
         name = request.form["name"]
-        priority = request.form["priority"]
+        priority = request.form["form select.field-priority"]
         task_manager = get_task_manager()
         task_manager.tasks.append(Task(name=name, priority=priority))
         task_manager.to_json(JSON_FILE)

@@ -2,8 +2,8 @@
 {% block content %}
 <h1>Create a new task</h1>
 <form method="post">
-    <input type="text" name="name" placeholder="Name for the task" />
-    Priority: <select name="priority">
+    <input type="text" name="name" placeholder="Name for the task" class="field-name"/>
+    Priority: <select name="form select.field-priority">
         {% for p in priority_list %}
         <option value="{{ p}}">{{ p }}</option>
         {% endfor %}
